@@ -9,7 +9,7 @@ export class ProductGuardService implements CanActivate {
 
   /* use route guards anytime you want to prevent access to a route, confirm navigation away from the route, or pre-load data for a route
      canActivate method is the guard. Must implement the CanActivate interface. Must also implement the canActivate method in the service.
-     Service must also be declared in its respective NgModule Providers array */
+     Service must also be declared in a Providers array*/
   canActivate(route: ActivatedRouteSnapshot, state: RouterStateSnapshot): boolean | Observable<boolean>  {
     const id = +route.url[1].path;
     if (isNaN(id) || id < 1) {
